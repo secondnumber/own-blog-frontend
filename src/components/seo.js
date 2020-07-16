@@ -68,9 +68,35 @@ function SEO({ description, lang, meta, title }) {
           content: metaDescription,
         },
       ].concat(meta)}
+      link={[
+        {
+          rel: "stylesheet",
+          href: "https://fonts.googleapis.com/css?family=Staatliches",
+        },
+        {
+          rel: "stylesheet",
+          href:
+              "https://cdn.jsdelivr.net/npm/uikit@3.2.3/dist/css/uikit.min.css",
+        },
+      ]}
+      script={[
+        {
+          src:
+              "https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/js/uikit.min.js",
+        },
+        {
+          src:
+              "https://cdn.jsdelivr.net/npm/uikit@3.2.3/dist/js/uikit-icons.min.js",
+        },
+        {
+          src: "https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/js/uikit.js",
+        },
+      ]}
     />
   )
 }
+
+
 
 SEO.defaultProps = {
   lang: `en`,
@@ -82,7 +108,7 @@ SEO.propTypes = {
   description: PropTypes.string,
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
 }
 
 export default SEO
